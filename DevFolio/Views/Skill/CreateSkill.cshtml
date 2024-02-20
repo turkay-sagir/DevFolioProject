@@ -1,0 +1,22 @@
+﻿@model DevFolio.Models.TblSkill
+@{
+    ViewBag.Title = "CreateSkill";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Yetenek Girişi</h2>
+
+<form method="post">
+
+    <label>Yetenek Adı</label>
+    @Html.TextBoxFor(x => x.SkillTitle, new { @class = "form-control" })
+    <br />
+
+    <label>Yetenek Değeri</label>
+    @Html.TextBoxFor(x => x.SkillValue, new { @class = "form-control", pattern = "[0-100]", title = "0-100 arasında bir değer giriniz." })
+    <small>0-100 arasında bir değer giriniz.</small>
+    <br />
+    <br />
+
+    <button class="btn btn-info">Yeteneği Kaydet</button>
+</form>

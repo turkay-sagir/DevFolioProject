@@ -1,0 +1,29 @@
+﻿@model DevFolio.Models.TblProject
+@{ 
+    ViewBag.Title = "CreateProject";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Proje Girişi</h2>
+
+@using(Html.BeginForm("CreateProject","Project",FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+<form method="post">
+
+    <label>Proje Adı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    <br />
+
+    <label>Proje Kategorisi</label>
+    @Html.DropDownListFor(x => x.TblCategory.CategoryID, (List<SelectListItem>)ViewBag.category, new { @class = "form-control" })
+    <br />
+
+    <label>Proje Kapak Fotoğrafı</label>
+    <input type="file" class="form-control" name="file" />
+    <br />
+
+    <button type="submit" class="btn btn-info">Projeyi Kaydet</button>
+
+</form>
+
+}

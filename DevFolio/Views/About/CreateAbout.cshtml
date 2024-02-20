@@ -1,0 +1,20 @@
+﻿@model DevFolio.Models.TblAbout
+
+@{
+    ViewBag.Title = "CreateAbout";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+@Html.Action("CurrentAboutList","About")
+<br />
+
+<h2>Yeni Hakkımda Girişi</h2>
+
+<form method="post">
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = 3 })
+    <br />
+
+    <button class="btn btn-info">Açıklamayı Kaydet</button>
+</form>

@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>İstatistikler Sayfası</h2>
+
+<div class="alert alert-danger"><b>Kategori Sayısı: </b>@ViewBag.categoryCount</div>
+<div class="alert alert-warning"><b>Proje Sayısı: </b>@ViewBag.projectCount</div>
+<div class="alert alert-success"><b>Yetenek Sayısı: </b>@ViewBag.skillCount</div>
+<div class="alert alert-secondary"><b>Hizmet Sayısı: </b>@ViewBag.serviceCount</div>
+<div class="alert alert-info"><b>Referans Sayısı: </b>@ViewBag.testimonialCount</div>
+<div class="alert alert-danger"><b>Son Eklenen Sosyal Medya: </b>@ViewBag.lastAddedSocialMedia</div>
+<div class="alert alert-dark"><b>Ortalama Yetenek Puanı: </b>@ViewBag.skillAvgValue</div>
+<div class="alert alert-primary"><b>Son Eklenen Yetenek: </b>@ViewBag.lastSkillTitleName</div>
+<div class="alert alert-info"><b>Asp.Net Core Proje Sayısı: </b>@ViewBag.coreCategoryProjectCount</div>
+<div class="alert alert-secondary"><b>En Çok Kullanılan Proje Kategorisi: </b>@ViewBag.mostUsedProjectCategory</div>
+

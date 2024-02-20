@@ -1,0 +1,22 @@
+﻿@model DevFolio.Models.TblFeature
+@{
+    ViewBag.Title = "UpdateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Özellik Güncelleme Sayfası</h2>
+<div style="width:fit-content" class="alert alert-warning">Özellikleri girerken virgülle ayırınız ve boşluk bırakmayınız!</div>
+
+<form method="post">
+    @Html.HiddenFor(x => x.FeatureID)
+
+    <label>Üst Başlık</label>
+    @Html.TextBoxFor(x => x.HeaderTitle, new { @class = "form-control" })
+    <br />
+
+    <label>Özellik Açıklaması</label>
+    @Html.TextAreaFor(x => x.HeaderDescription, new { @class = "form-control", @rows = 3 })
+    <br />
+    <button class="btn btn-info">Özelliği Güncelle</button>
+</form>
+

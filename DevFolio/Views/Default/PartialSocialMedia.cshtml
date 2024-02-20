@@ -1,0 +1,6 @@
+﻿@model List<DevFolio.Models.TblSocialMedia>
+
+@foreach (var item in Model)
+{    
+    <li><a href="@item.RedirectUrl"><span class="ico-circle"><i class="@item.IconUrl"></i></span></a></li>        
+}

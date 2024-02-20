@@ -1,0 +1,32 @@
+﻿@model List<DevFolio.Models.TblAdmin>
+
+@{
+    ViewBag.Title = "AdminList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Admin Sayfası</h2>
+
+<table class="table table-bordered">
+
+    <tr align="center" class="table table-secondary">
+        <th>#</th>
+        <th>Kullanıcı Adı</th>
+        <th>Şifre</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr align="center">
+            <td>@item.AdminID</td>
+            <td>@item.Username</td>
+            <td>@item.Password</td>
+            <td><a href="/Admin/DeleteAdmin/@item.AdminID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/UpdateAdmin/@item.AdminID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Admin/CreateAdmin" class="btn btn-info">Yeni Admin Girişi</a>

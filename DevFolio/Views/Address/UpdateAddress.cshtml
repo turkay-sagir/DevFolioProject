@@ -1,0 +1,34 @@
+﻿@model DevFolio.Models.TblAddress
+
+@{
+    ViewBag.Title = "UpdateAddress";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Adres Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.AdresID)
+
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = 5 })
+    <br />
+
+    <label>Konum</label>
+    @Html.TextBoxFor(x => x.Location, new { @class = "form-control" })
+    <br />
+
+    <label>Telefon Numarası</label>
+    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", @required="", pattern="\\+90[0-9]{10}", title="Telefon numarası +90 ile başlayarak toplamda 12 rakamdan oluşmalıdır." })
+    <small>Telefon numarasını +90 ile başlayarak 12 rakamlı olarak giriniz.</small>
+    <br />
+
+    <label>Email</label>
+    <div class="form-group">
+        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @type = "email" })
+        @Html.ValidationMessageFor(x => x.Email)
+    </div>
+
+    <button class="btn btn-info">Adresi Güncelle</button>
+</form>
+

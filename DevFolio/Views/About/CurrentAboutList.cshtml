@@ -1,0 +1,23 @@
+﻿@model List<DevFolio.Models.TblAbout>
+    
+@{
+    Layout = null;
+}
+
+<h2>Mevcut İçerik</h2>
+
+
+<div class="container">
+
+    <table border="0">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="font-size:16px;color:cadetblue;font-family:Tahoma;font-style:oblique;font-weight:bold">@item.Description</td>
+            </tr>
+        }
+
+    </table>
+
+</div>

@@ -1,0 +1,30 @@
+﻿@model DevFolio.Models.TblSocialMedia
+@{
+    ViewBag.Title = "UpdateSocialMedia";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+
+    var imageList = (List<SelectListItem>)ViewBag.imageList;
+}
+
+<h2>Sosyal Medya Güncelleme Sayfası</h2>
+
+<form method="post">
+    @Html.HiddenFor(x => x.SocialMediaID)
+    @Html.HiddenFor(x => x.Status)
+
+    <label>Platform Adı</label>
+    @Html.TextBoxFor(x => x.PlatformName, new { @class = "form-control" })
+    <br />
+
+    <label>Simge Url</label>
+    @Html.DropDownListFor(x => x.IconUrl, (List<SelectListItem>)imageList, new { @class = "form-control" })
+    <br />
+
+    <label>Platform Url</label>
+    @Html.TextBoxFor(x => x.RedirectUrl, new { @class = "form-control", @required = "", pattern = "www\\.[a-z]+\\.com" })
+    <small><i>www.example.com</i> formatında giriş yapınız.</small>
+    <br />
+    <br />
+
+    <button class="btn btn-info">Sosyal Medyayı Güncelle</button>
+</form>

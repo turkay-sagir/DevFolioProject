@@ -1,0 +1,189 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@Html.Action("PartialHead", "Default")
+
+<body id="page-top">
+
+    <!--/ Nav Star /-->
+    @Html.Action("PartialNavbar", "Default")
+    <!--/ Nav End /-->
+    <!--/ Intro Skew Star /-->
+    @Html.Action("PartialFeature", "Default")
+    <!--/ Intro Skew End /-->
+
+    <section id="about" class="about-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="box-shadow-full">
+                        <div class="row">
+                            <div class="col-md-6">
+                                @Html.Action("PartialProfile","Default")
+                                
+                                @Html.Action("PartialSkill","Default")
+                            </div>
+                            @Html.Action("PartialAbout", "Default")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--/ Section Services Star /-->
+    <section id="service" class="services-mf route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            HİZMETLERİM
+                        </h3>
+                        <p class="subtitle-a">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @Html.Action("PartialService", "Default")
+            </div>
+        </div>
+</section>
+    <!--/ Section Services End /-->
+
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(/Templates/devfolio-master/img/counters-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container">
+            <div class="row">
+                @Html.Action("PartialStatistic","Default") 
+            </div>
+        </div>
+    </div>
+
+    <!--/ Section Portfolio Star /-->
+    <section id="work" class="portfolio-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 class="title-a">
+                            ÇALIŞMALARIM
+                        </h3>
+                        <p class="subtitle-a">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <div class="line-mf"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @Html.Action("PartialProject", "Default")
+            </div>
+        </div>
+</section>
+    <!--/ Section Portfolio End /-->
+    <!--/ Section Testimonials Star /-->
+    <div class="testimonials paralax-mf bg-image" style="background-image: url(/Templates/devfolio-master/img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="testimonial-mf" class="owl-carousel owl-theme">
+                        @Html.Action("PartialTestimonial", "Default")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!--/ Section Contact-Footer Star /-->
+    <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(/Templates/devfolio-master/img/overlay-bg.jpg)">
+        <div class="overlay-mf"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact-mf">
+                        <div id="contact" class="box-shadow-full">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="title-box-2">
+                                        <h5 class="title-left">
+                                            Mesaj Gönder
+                                        </h5>
+                                    </div>
+                                    @Html.Action("PartialContact", "Default")
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="title-box-2 pt-4 pt-md-0">
+                                        <h5 class="title-left">
+                                            İletişim
+                                        </h5>
+                                    </div>
+                                    @Html.Action("PartialAddress", "Default")
+                                    <div class="socials">
+                                        <ul>
+                                            @Html.Action("PartialSocialMedia", "Default")
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="copyright-box">
+                            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+                            <div class="credits">
+                                <!--
+                                  All the links in the footer should remain intact.
+                                  You can delete the links only if you purchased the pro version.
+                                  Licensing information: https://bootstrapmade.com/license/
+                                  Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
+                                -->
+                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+    <!--/ Section Contact-footer End /-->
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <div id="preloader"></div>
+
+    <!-- JavaScript Libraries -->
+    <script src="~/Templates/devfolio-master/lib/jquery/jquery.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/popper/popper.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/easing/easing.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/counterup/jquery.waypoints.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/counterup/jquery.counterup.js"></script>
+    <script src="~/Templates/devfolio-master/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/lightbox/js/lightbox.min.js"></script>
+    <script src="~/Templates/devfolio-master/lib/typed/typed.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="~/Templates/devfolio-master/contactform/contactform.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="~/Templates/devfolio-master/js/main.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,31 @@
+﻿@model DevFolio.Models.TblService
+
+@{
+    ViewBag.Title = "UpdateService";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+
+    var imageList = (List<SelectListItem>)ViewBag.imageList;
+
+}
+
+<h2>Hizmeti Güncelle</h2>
+    
+
+<form method="post">
+
+    @Html.HiddenFor(x=>x.ServiceID)
+
+    <label>Hizmet Adı</label>
+    @Html.TextBoxFor(x=>x.ServiceTitle, new {@class="form-control"})
+    <br />
+
+    <label>Hizmet Açıklaması</label>
+    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = 3 })
+    <br />
+
+    <label>Fotoğraf URL</label>
+    @Html.DropDownListFor(x => x.ServiceImageUrl, (List<SelectListItem>)imageList, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Hizmeti Güncelle</button>
+
+</form>

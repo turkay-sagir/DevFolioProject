@@ -1,0 +1,28 @@
+﻿@model DevFolio.Models.TblFeature
+@{
+    ViewBag.Title = "CreateFeature";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<h2>Yeni Özellik Girişi</h2>
+
+@if(ViewBag.num2Addr>0)
+            {
+                <div style="width:fit-content" class="alert alert-danger">Sadece 1 adet özellik girilebilir!</div>
+                <a href="/Feature/FeatureList" class="btn btn-info">Geri Dön</a>
+            }
+else
+{
+    <div style="width:fit-content" class="alert alert-warning">Özellikleri girerken virgülle ayırınız ve boşluk bırakmayınız!</div>
+
+    <form method="post">
+        <label>Üst Başlık</label>
+        @Html.TextBoxFor(x => x.HeaderTitle, new { @class = "form-control" })
+        <br />
+
+        <label>Özellik Açıklaması</label>
+        @Html.TextAreaFor(x => x.HeaderDescription, new { @class = "form-control", @rows = 3 })
+        <br />
+        <button class="btn btn-info">Özelliği Kaydet</button>
+    </form>
+}
