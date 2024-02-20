@@ -272,12 +272,12 @@
     <Content Include="Templates\devfolio-master\img\apple-touch-icon.png" />
     <Content Include="Templates\devfolio-master\img\counters-bg.jpg" />
     <Content Include="Templates\devfolio-master\img\favicon.png" />
-    <Content Include="Templates\devfolio-master\img\intro-bg - Copy.jpg" />
-    <Content Include="Templates\devfolio-master\img\intro-bg.jpg" />
+    <Content Include="Templates\devfolio-master\img\new-bg.png" />
     <Content Include="Templates\devfolio-master\img\overlay-bg.jpg" />
     <Content Include="Templates\devfolio-master\img\post-1.jpg" />
     <Content Include="Templates\devfolio-master\img\post-2.jpg" />
     <Content Include="Templates\devfolio-master\img\post-3.jpg" />
+    <Content Include="Templates\devfolio-master\img\profile-photo.jpg" />
     <Content Include="Templates\devfolio-master\img\testimonial-2.jpg" />
     <Content Include="Templates\devfolio-master\img\testimonial-4.jpg" />
     <Content Include="Templates\devfolio-master\img\work-1.jpg" />

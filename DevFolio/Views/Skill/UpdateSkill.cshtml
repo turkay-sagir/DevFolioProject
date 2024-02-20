@@ -16,7 +16,7 @@
     <br />
 
     <label>Yetenek Değeri</label>
-    @Html.TextBoxFor(x => x.SkillValue, new { @class = "form-control", pattern = "[0-100]", title = "0-100 arasında bir değer giriniz." })
+    @Html.TextBoxFor(x => x.SkillValue, new { @class = "form-control", pattern = "^[0-9]{1,2}$|^100$", title = "0-100 arasında bir değer giriniz." })
     <small>0-100 arasında bir değer giriniz.</small>
     <br />
     <br />

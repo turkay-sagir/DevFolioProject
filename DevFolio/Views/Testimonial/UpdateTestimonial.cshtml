@@ -10,9 +10,8 @@
 @using (Html.BeginForm("UpdateTestimonial", "Testimonial", FormMethod.Post, new {enctype="multipart/form-data"}))
 { 
 <form method="post">
-    <label>Referans Id</label>
+
     @Html.HiddenFor(x => x.TestimonialID, new { @class = "form-control" })
-    <br />
 
     <label>Referans Adı</label>
     @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
@@ -24,6 +23,7 @@
 
     <label>Referans Yorumu</label>
     @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @rows = 3 })
+    <br />
 
     <button type="submit" class="btn btn-info">Referansı Kaydet</button>
 
