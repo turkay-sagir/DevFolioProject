@@ -46,7 +46,7 @@ namespace DevFolio.Controllers
 
 
             var category = db.TblCategory.Where(x => x.CategoryID == p.TblCategory.CategoryID).FirstOrDefault();
-            p.TblCategory = category; 
+            p.TblCategory = category;
             p.CreatedDate = DateTime.Now;
             db.TblProject.Add(p);
             db.SaveChanges();
