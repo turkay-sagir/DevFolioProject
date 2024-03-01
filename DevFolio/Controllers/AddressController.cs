@@ -12,9 +12,14 @@ namespace DevFolio.Controllers
         DbDevFolioEntities db = new DbDevFolioEntities();
         public ActionResult AddressList()
         {
-            var values = db.TblAddress.ToList();
+            ViewBag.AdresID = db.TblAddress.Select(x=>x.AdresID).FirstOrDefault();
+            ViewBag.Description = db.TblAddress.Select(y=>y.Description).FirstOrDefault();
+            ViewBag.Location = db.TblAddress.Select(z=>z.Location).FirstOrDefault();
+            ViewBag.PhoneNumber = db.TblAddress.Select(k=>k.PhoneNumber).FirstOrDefault();
+            ViewBag.Email = db.TblAddress.Select(m=>m.Email).FirstOrDefault();
+
             ViewBag.num1Addr = db.TblAddress.Count();
-            return View(values);
+            return View();
         }
 
         [HttpGet]

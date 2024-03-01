@@ -1,6 +1,4 @@
-﻿@model List<DevFolio.Models.TblAddress>
-
-@{
+﻿@{
     ViewBag.Title = "AddressList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
@@ -19,18 +17,15 @@
         <th>Güncelle</th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.AdresID</td>
-            <td>@item.Description</td>
-            <td>@item.Location</td>
-            <td>@item.PhoneNumber</td>
-            <td>@item.Email</td>
-            <td><a href="/Address/DeleteAddress/@item.AdresID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Address/UpdateAddress/@item.AdresID" class="btn btn-success">Güncelle</a></td>
-        </tr>
-    }
+    <tr>
+        <td>@ViewBag.AdresID</td>
+        <td>@ViewBag.Description</td>
+        <td>@ViewBag.Location</td>
+        <td>@ViewBag.PhoneNumber</td>
+        <td>@ViewBag.Email</td>
+        <td><a href="/Address/DeleteAddress/@ViewBag.AdresID" class="btn btn-danger">Sil</a></td>
+        <td><a href="/Address/UpdateAddress/@ViewBag.AdresID" class="btn btn-success">Güncelle</a></td>
+    </tr>
 </table>
 @if (ViewBag.num1Addr < 1)
 {
