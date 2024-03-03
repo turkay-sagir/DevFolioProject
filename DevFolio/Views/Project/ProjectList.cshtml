@@ -3,32 +3,60 @@
 @{
     ViewBag.Title = "ProjectList";
     Layout = "~/Views/AdminLayout/Index.cshtml";
+    int count = 0;
 }
 
+@*
+    @using (Html.BeginForm("ProjectList", "Project", FormMethod.Get))
+    {
+        <p align="right" style="font-size:16px">
+            <b>Proje Adı:</b>  @Html.TextBox("p")
+            <input type="submit" class="btn btn-primary" value="Ara" />
+        </p>
+    }
+*@
 <h2>Projeler Sayfası</h2>
 
-<table class="table table-bordered">
-
-    <tr class="table table-secondary">
-        <th>#</th>
-        <th>Proje Başlığı</th>
-        <th>Proje Kategorisi</th>
-        <th>Oluşturulma Tarihi</th>
-        <th>Sil</th>
-        <th>Güncelle</th>
-    </tr>
-
-    @foreach(var item in Model)
-     {
-        <tr>
-            <td>@item.ProjectID</td>
-            <td>@item.Title</td>
-            <td>@item.TblCategory.CategoryName</td>
-            <td>@(((DateTime)item.CreatedDate).ToString("d"))</td>
-            <td><a href="/Project/DeleteProject/@item.ProjectID" class="btn btn-danger">Sil</a></td>
-            <td><a href="/Project/UpdateProject/@item.ProjectID" class="btn btn-success">Güncelle</a></td>
+<table id="tbl1" class="table table-bordered">
+    <thead>
+        <tr class="table table-secondary">
+            <th>#</th>
+            <th>Proje Başlığı</th>
+            <th>Proje Kategorisi</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Sil</th>
+            <th>Güncelle</th>
         </tr>
-     }
-
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.Title</td>
+                <td>@item.TblCategory.CategoryName</td>
+                <td>@(((DateTime)item.CreatedDate).ToString("d"))</td>
+                <td><a href="/Project/DeleteProject/@item.ProjectID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Project/UpdateProject/@item.ProjectID" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
 </table>
+<br />
 <a href="/Project/CreateProject" class="btn btn-info">Yeni Proje Girişi</a>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/2.0.1/js/dataTables.bootstrap5.js"></script>
+
+
+<link href="https://cdn.datatables.net/2.0.1/css/dataTables.bootstrap5.css" rel="stylesheet" />
+
+<script>
+    $('#tbl1').DataTable({
+        language: {
+            url: "//cdn.datatables.net/plug-ins/1.10.20/i18n/Turkish.json"
+        }
+    });
+</script>

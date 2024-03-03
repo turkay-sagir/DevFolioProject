@@ -12,8 +12,15 @@ namespace DevFolio.Controllers
     public class ProjectController : Controller
     {
         DbDevFolioEntities db = new DbDevFolioEntities();
+        //public ActionResult ProjectList(string p)
         public ActionResult ProjectList()
         {
+            //var values = from i in db.TblProject select i;
+            /*if(!string.IsNullOrEmpty(p))
+            {
+                values = values.Where(x=>x.Title.Contains(p));
+            }*/
+
             var values = db.TblProject.ToList();
             return View(values);
         }
@@ -35,6 +42,7 @@ namespace DevFolio.Controllers
         [HttpPost]
         public ActionResult CreateProject(TblProject p, HttpPostedFileBase file)
         {
+            
             if (file != null && file.ContentLength > 0)
             {
                 var fileName = Path.GetFileName(file.FileName);
@@ -79,19 +87,20 @@ namespace DevFolio.Controllers
         [HttpPost]
         public ActionResult UpdateProject(TblProject p,HttpPostedFileBase file)
         {
-            if(file!=null && file.ContentLength>0)
+            var value = db.TblProject.Find(p.ProjectID);
+
+            if (file!=null && file.ContentLength>0)
             {
                 var fileName = Path.GetFileName(file.FileName);
                 var path = Path.Combine(Server.MapPath("~/Templates/devfolio-master/img/"), fileName);
                 file.SaveAs(path);
 
-                p.CoverImageUrl = fileName;
+                value.CoverImageUrl = fileName;
             }
 
-            var value = db.TblProject.Find(p.ProjectID);
+            
             value.Title = p.Title;
             value.ProjectCategory = p.TblCategory.CategoryID;
-            value.CoverImageUrl = p.CoverImageUrl;
             db.SaveChanges();
             return RedirectToAction("ProjectList");
         }

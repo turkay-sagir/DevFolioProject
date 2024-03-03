@@ -11,7 +11,8 @@ namespace DevFolio.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TblProject
     {
         public int ProjectID { get; set; }

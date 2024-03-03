@@ -4,15 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using DevFolio.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace DevFolio.Controllers
 {
     public class CategoryController : Controller
     {
         DbDevFolioEntities db = new DbDevFolioEntities();
-        public ActionResult CategoryList()
+        public ActionResult CategoryList(int page = 1)
         {
-            var values = db.TblCategory.ToList();
+            var values = db.TblCategory.ToList().ToPagedList(page, 4);
             return View(values);
         }
 
@@ -25,6 +27,10 @@ namespace DevFolio.Controllers
         [HttpPost]
         public ActionResult CreateCategory(TblCategory p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("CreateCategory");
+            }
             db.TblCategory.Add(p);
             db.SaveChanges();
             return RedirectToAction("CategoryList");

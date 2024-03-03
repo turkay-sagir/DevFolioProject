@@ -1,4 +1,5 @@
-﻿
+﻿@model DevFolio.Models.TblCategory
+
 @{
     ViewBag.Title = "CreateCategory";
     Layout = "~/Views/AdminLayout/Index.cshtml";
@@ -6,12 +7,19 @@
 
 <h2>Yeni Kategori Girişi</h2>
 
-<form method="post">
 
-    <label>Kategori Adı</label>
-    <input type="text" class="form-control" name="CategoryName" />
+@using (Html.BeginForm("CreateCategory", "Category", new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group">
+        <label>Kategori Adı</label>
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryName,"", new {@style="color:red"})
+    </div>
 
-    <button class="btn btn-info">Kategoriyi Kaydet</button>
+    <div class="form-group">
+        <button class="btn btn-info">Kategoriyi Kaydet</button>
+    </div>
+}
 
-</form>
+
 
